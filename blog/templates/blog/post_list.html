@@ -6,5 +6,12 @@
   </head>
   <body>
     My first Django site!
+    {% for post in posts %}
+      <article>
+          <p>published: {{ post.published_date }} by {{ post.author.first_name}}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaks }}</p>
+      </article>
+    {% endfor %}
   </body>
 </html>
